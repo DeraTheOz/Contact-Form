@@ -40,26 +40,30 @@
 				<form action="#" class="form">
 					<h2 class="form-title">Contact Us</h2>
 
-					<div class="form__group">
-						<label for="first-name">First Name</label>
-						<input
-							type="text/submit/hidden/button"
-							name="first-name"
-							id="first-name"
-							value=""
-							required
-						/>
-						<span class="error">This field is required</span>
+					<div class="form__group name">
+						<div>
+							<label for="first-name">First Name</label>
+							<input
+								type="text/submit/hidden/button"
+								name="first-name"
+								id="first-name"
+								value=""
+								required
+							/>
+							<span class="error">This field is required</span>
+						</div>
 
-						<label for="last-name">Last Name</label>
-						<input
-							type="text/submit/hidden/button"
-							name="last-name"
-							id="last-name"
-							value=""
-							required
-						/>
-						<span class="error">This field is required</span>
+						<div>
+							<label for="last-name">Last Name</label>
+							<input
+								type="text/submit/hidden/button"
+								name="last-name"
+								id="last-name"
+								value=""
+								required
+							/>
+							<span class="error">This field is required</span>
+						</div>
 					</div>
 
 					<div class="form__group email">
@@ -77,43 +81,54 @@
 					</div>
 
 					<div class="form__group query">
-					  <span class="query title">Query Type</span>
+						<span class="query title">Query Type</span>
 						<input type="radio" name="radio" id="radio" />
 						<label for="radio">General Enquiry</label>
 						<input type="radio" name="radio" id="radio" />
 						<label for="radio">Support Request</label>
 						<span class="error">Please select a query type</span>
 					</div>
-					
+
 					<div class="form__group message">
-					  <label for="message">Message</label>
-					  <input type="text" name="message" id="message" value="" />
-					  <span class="error">This
-		field is required</span>
+						<label for="message">Message</label>
+						<input
+							type="text"
+							name="message"
+							id="message"
+							value=""
+						/>
+						<span class="error">This field is required</span>
 					</div>
-					
+
 					<div class="form__group consent">
-					  <input type="checkbox" name="consent" id="consent" />
-					  <label for="consent">I consent to being contacted by the team &star;</label>
-					  <span class="error">To submit
-		this form, please consent to being contacted</span>
+						<input type="checkbox" name="consent" id="consent" />
+						<label for="consent"
+							>I consent to being contacted by the team
+							&star;</label
+						>
+						<span class="error"
+							>To submit this form, please consent to being
+							contacted</span
+						>
 					</div>
-					
-					<button type="submit">Submit</button>
+
+					<button type="submit" class="button">Submit</button>
 				</form>
-				
+
 				<div class="hidden success">
-				  <div class="success-title-box">
-				    <img src="assets/images/icon-success-check.svg" alt="success message
-				    icon" />
-				  <h3 class="success-title">Message Sent!</h3>
-				  </div>
-				  <p class="success-text">Thanks
-		for completing the form. We'll be in touch soon!</p>
+					<div class="success-title-box">
+						<img
+							src="assets/images/icon-success-check.svg"
+							alt="success message
+				    icon"
+						/>
+						<h3 class="success-title">Message Sent!</h3>
+					</div>
+					<p class="success-text">
+						Thanks for completing the form. We'll be in touch soon!
+					</p>
 				</div>
 			</section>
 		</main>
-
-		         
 	</body>
 </html>
