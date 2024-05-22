@@ -44,40 +44,70 @@ body {
 
 /* Form */
 .contact {
-	padding: 0 2.4rem;
+	max-width: 73.6rem;
+	background-color: var(--white);
+	padding: 3.2rem;
+	margin: auto;
+	border-radius: 1.6rem;
+	transform: translateY(50%);
 }
 
 .form {
-	max-width: 70rem;
-	padding: 3.2rem;
-	margin: auto;
-	background-color: var(--white);
-	border-radius: 1.5rem;
-	transform: translateY(50%);
-	/* display: flex; */
-	/* flex-direction: column; */
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.form-title {
+	font-size: 3.2rem;
+	letter-spacing: -1px;
+	font-weight: var(--font-w-bold);
+	margin-bottom: 1.5rem;
 }
 
 .name {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: 1.5rem;
-	max-width: 100%;
 }
 
-.name label {
+.form__group label {
 	display: block;
-	width: 100%;
+	padding-bottom: 1rem;
 }
 
-.name input {
-	display: block;
-	width: 100%;
+.star {
+	color: var(--green);
 }
 
-.error {
-	display: block;
+.form__group input {
+	min-width: 100%;
+	min-height: 5.1rem;
+	padding-left: 2rem;
+	border: none;
+	border: 0.1rem solid var(--medium-grey);
+	border-radius: 0.8rem;
 }
+
+.name-error,
+.email-error,
+.query-error,
+.message-error,
+.consent-error {
+	color: var(--red);
+	height: 1.2rem;
+	margin: 0.3rem 0 1.2rem;
+}
+
+/* .name-error {
+  opacity: 0;
+  visibility: hidden;
+} */
+
+/* Email group */
+/* .email label {
+  margin-top: 3rem;
+} */
 
 .button {
 	width: 50%;
@@ -95,7 +125,6 @@ body {
 	top: 2%;
 	left: 50%;
 	transform: translate(-50%, 0);
-	z-index: 999;
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s ease-in;
