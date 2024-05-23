@@ -52,7 +52,6 @@
 								name="first-name"
 								id="first-name"
 								class="form__input"
-								value=""
 								required
 							/>
 							<p class="name-error">This field is required</p>
@@ -68,7 +67,6 @@
 								name="last-name"
 								id="last-name"
 								class="form__input"
-								value=""
 								required
 							/>
 							<p class="name-error">This field is required</p>
@@ -109,6 +107,7 @@
 									name="radio"
 									id="general-enquiry"
 									class="query__input"
+									required
 								/>
 								<label
 									for="general-enquiry"
@@ -122,6 +121,7 @@
 									name="radio"
 									id="support-request"
 									class="query__input"
+									required
 								/>
 								<label
 									for="support-request"
@@ -138,31 +138,37 @@
 						<label for="message" class="form__label"
 							>Message <span class="star">&ast;</span></label
 						>
-						<input
-							type="text"
+						<textarea
 							name="message"
 							id="message"
 							class="form__input"
-							value=""
+							maxlength="250"
 							required
-						/>
+						></textarea>
+
 						<p class="message-error">This field is required</p>
 					</div>
+
+					<!-- Consent Group -->
+					<div class="form__group consent">
+						<input
+							type="checkbox"
+							name="consent"
+							id="consent"
+							required
+						/>
+						<label for="consent"
+							>I consent to being contacted by the team
+							<span class="star">&ast;</span></label
+						>
+						<p class="consent-error">
+							To submit this form, please consent to being
+							contacted
+						</p>
+					</div>
+
+					<button type="submit" class="button">Submit</button>
 				</form>
-
-				<!-- Consent Group -->
-				<div class="form__group consent">
-					<input type="checkbox" name="consent" id="consent" />
-					<label for="consent"
-						>I consent to being contacted by the team
-						<span class="star">&ast;</span></label
-					>
-					<p class="consent-error">
-						To submit this form, please consent to being contacted
-					</p>
-				</div>
-
-				<button type="submit" class="button">Submit</button>
 			</section>
 
 			<!-- Success message -->

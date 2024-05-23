@@ -111,6 +111,8 @@ body {
 	margin: 0.3rem 0 1.2rem;
 }
 
+/* Use for Email Validation: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g */
+
 /* Query group */
 .query__box {
 	display: grid;
@@ -141,6 +143,9 @@ body {
 }
 
 /* Message group */
+.message .form__input {
+	min-height: 10.5rem;
+}
 
 .button {
 	width: 50%;
