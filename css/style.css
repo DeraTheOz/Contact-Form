@@ -133,10 +133,45 @@ body {
 	cursor: pointer;
 }
 
-.query__label {
-	width: 100%;
+/* style for custom radio buttons */
+.query__input {
+	display: none;
 }
 
+.query__label {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.query__input-btn {
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid var(--green);
+	border-radius: 50%;
+	position: relative;
+}
+
+.query__input-btn::after {
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--green);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.1s ease-in;
+}
+
+.query__input:checked + .query__label .query__input-btn::after {
+	opacity: 1;
+}
+
+/* active state for radio input container */
 .query__group:has(.query__input:checked) {
 	border: 1px solid var(--green);
 	background-color: var(--light-green);
