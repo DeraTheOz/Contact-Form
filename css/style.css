@@ -38,6 +38,7 @@ body {
 	color: var(--dark-grey);
 	line-height: var(--line-height);
 	min-height: var(--min-height);
+	padding: 12rem 2.4rem;
 	background-color: var(--light-green);
 	position: relative;
 }
@@ -49,7 +50,7 @@ body {
 	padding: 3.5rem;
 	margin: auto;
 	border-radius: 1.6rem;
-	transform: translateY(50%);
+	/* transform: translateY(8%); */
 }
 
 .form {
@@ -65,7 +66,7 @@ body {
 	margin-bottom: 1.5rem;
 }
 
-.name {
+.form__grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1.5rem;
@@ -81,7 +82,9 @@ body {
 	color: var(--green);
 }
 
-.form__input {
+.form__input,
+.query__group,
+.message__input {
 	min-width: 100%;
 	min-height: 5rem;
 	font-size: inherit;
@@ -100,25 +103,31 @@ body {
 	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
 }
 
-.name-error,
+.error {
+	color: var(--red);
+	height: 1.2rem;
+	margin: 0.3rem 0 1.2rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.1s ease-in;
+}
+
+.firstname-error,
+.lastname-error,
 .email-error,
 .query-error,
 .message-error,
 .consent-error {
-	color: var(--red);
-	height: 1.2rem;
-	margin: 0.3rem 0 1.2rem;
+	opacity: 1;
+	visibility: visible;
 }
 
-/* Use for Email Validation: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g */
+/* Use for Email Validation: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+
+/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+*/
 
 /* Query group */
-.query__box {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1.5rem;
-}
-
 .query__group {
 	display: flex;
 	align-items: center;
@@ -138,6 +147,7 @@ body {
 }
 
 .query__label {
+	font-size: 1.8rem;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -177,7 +187,7 @@ body {
 }
 
 /* Message group */
-.message .form__input {
+.message__input {
 	min-height: 10.5rem;
 }
 
@@ -194,20 +204,20 @@ body {
 }
 
 .consent__btn {
-	width: 1.6rem;
-	height: 1.6rem;
-	font-size: 1.2rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	font-size: 1.3rem;
 	text-align: center;
 	color: var(--white);
-	border-radius: 0;
+	border-radius: 0.2rem;
 	position: relative;
 }
 
 .consent__btn::after {
 	content: '\2713';
-	width: 1.6rem;
-	height: 1.6rem;
-	border-radius: 0;
+	width: 1.8rem;
+	height: 1.8rem;
+	border-radius: 0.2rem;
 	background-color: var(--green);
 	position: absolute;
 	top: 50%;
@@ -221,39 +231,47 @@ body {
 	opacity: 1;
 }
 
+/* Button */
 .button {
 	background: none;
 	border: none;
 	font-size: 1.8rem;
+	font-weight: var(--font-w-bold);
 	color: var(--white);
 	background-color: var(--green);
-	padding: 1.5rem 3rem;
+	padding: 1.3rem 3rem;
 	border-radius: 0.8rem;
 	cursor: pointer;
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease-in;
 }
 
 .button:hover {
-	background-image: linear-gradient(to left,var(--dark-grey), var(--green));
+	background-color: var(--dark-grey);
 }
 
 /* Success Message */
 .hidden {
 	max-width: 45rem;
+	min-width: 32.7rem;
+	width: 80%;
 	color: var(--white);
 	background-color: var(--dark-grey);
-	border-radius: 1.5rem;
-	padding: 2rem 2rem;
+	border-radius: 1.2rem;
+	padding: 2rem;
 	margin: 0 auto;
 	position: absolute;
 	top: 2%;
 	left: 50%;
 	transform: translate(-50%, 0);
+	/* transform: translateY(-50%); */
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s ease-in;
 }
 
 .success-title-box {
+	max-width: 40.2rem;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
@@ -263,7 +281,6 @@ body {
 .success-title {
 	font-size: 1.8rem;
 	font-weight: var(--font-w-bold);
-	letter-spacing: 1px;
 }
 
 .success {
