@@ -144,6 +144,7 @@
 							name="message"
 							id="message"
 							class="form__input"
+							minlength="5"
 							maxlength="250"
 							required
 						></textarea>
@@ -157,9 +158,11 @@
 							type="checkbox"
 							name="consent"
 							id="consent"
+							class="consent__input"
 							required
 						/>
-						<label for="consent"
+						<label for="consent" class="consent__label"
+							><span class="query__input-btn consent__btn"></span
 							>I consent to being contacted by the team
 							<span class="star">&ast;</span></label
 						>
