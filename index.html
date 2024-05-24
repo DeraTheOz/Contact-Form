@@ -11,9 +11,19 @@
 			href="./assets/images/favicon-32x32.png"
 		/>
 
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+		<link
+			rel="stylesheet"
+			href="css/style.css"
+			type="text/css"
+			media="all"
+		/>
 
-		<link rel="stylesheet" href="css/queries.css" type="text/css" media="all" />
+		<link
+			rel="stylesheet"
+			href="css/queries.css"
+			type="text/css"
+			media="all"
+		/>
 
 		<title>dera-contact-form</title>
 
@@ -34,50 +44,52 @@
 					<div class="form__grid">
 						<div>
 							<label for="first-name" class="form__label"
-								>First Name <span class="star">&ast;</span></label
+								>First Name
+								<span class="star">&ast;</span></label
 							>
 							<input
-								type="text/submit/hidden/button"
+								type="text"
 								name="first-name"
-								id="first-name"
+								id="name"
+								data-name="first"
 								class="form__input"
 								required
 							/>
-							<p class="error firstname-error">
+							<p class="firstname-error">
 								This field is required
 							</p>
 						</div>
 
 						<div>
 							<label for="last-name" class="form__label"
-								>Last Name <span class="star">&ast;</span></label
+								>Last Name
+								<span class="star">&ast;</span></label
 							>
 							<input
-								type="text/submit/hidden/button"
+								type="text"
 								name="last-name"
-								id="last-name"
+								id="name"
 								class="form__input"
 								required
 							/>
-							<p class="error lastname-error">
-								This field is required
-							</p>
+							<p class="lastname-error">This field is required</p>
 						</div>
 					</div>
 
 					<!-- Email Group -->
 					<div>
 						<label for="email" class="form__label"
-							>Email Address <span class="star">&ast;</span></label
+							>Email Address
+							<span class="star">&ast;</span></label
 						>
 						<input
-							type="text/submit/hidden/button"
+							type="email"
 							name="email"
 							id="email"
 							class="form__input"
 							required
 						/>
-						<p class="error email-error">
+						<p class="email-error">
 							Please enter a valid email address
 						</p>
 					</div>
@@ -99,9 +111,11 @@
 									class="query__input"
 									required
 								/>
-								<label for="general-enquiry" class="query__label"
-									><span class="query__input-btn"></span>General
-									Enquiry</label
+								<label
+									for="general-enquiry"
+									class="query__label"
+									><span class="query__input-btn"></span
+									>General Enquiry</label
 								>
 							</div>
 							<div class="query__group">
@@ -112,30 +126,31 @@
 									class="query__input"
 									required
 								/>
-								<label for="support-request" class="query__label"
-									><span class="query__input-btn"></span>Support
-									Request</label
+								<label
+									for="support-request"
+									class="query__label"
+									><span class="query__input-btn"></span
+									>Support Request</label
 								>
 							</div>
 						</div>
-						<p class="error query-error">Please select a query type</p>
+						<p class="query-error">Please select a query type</p>
 					</div>
 
 					<!-- Message Group -->
-					<div>
+					<div class="message__group">
 						<label for="message" class="form__label"
 							>Message <span class="star">&ast;</span></label
 						>
 						<textarea
 							name="message"
 							id="message"
-							class="message__input"
-							minlength="5"
+							class="form__input"
 							maxlength="250"
+							minlength="10"
 							required
 						></textarea>
-
-						<p class="error message-error">This field is required</p>
+						<p class="message-error">This field is required</p>
 					</div>
 
 					<!-- Consent Group -->
@@ -148,12 +163,13 @@
 							required
 						/>
 						<label for="consent" class="consent__label"
-							><span class="query__input-btn consent__btn"></span>I
-							consent to being contacted by the team
+							><span class="query__input-btn consent__btn"></span
+							>I consent to being contacted by the team
 							<span class="star">&ast;</span></label
 						>
-						<p class="error consent-error">
-							To submit this form, please consent to being contacted
+						<p class="consent-error">
+							To submit this form, please consent to being
+							contacted
 						</p>
 					</div>
 
@@ -162,7 +178,7 @@
 			</section>
 
 			<!-- Success message -->
-			<div class="hidden success">
+			<div class="hidden">
 				<div class="success-title-box">
 					<img
 						src="assets/images/icon-success-check.svg"
