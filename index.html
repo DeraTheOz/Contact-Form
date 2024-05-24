@@ -11,19 +11,9 @@
 			href="./assets/images/favicon-32x32.png"
 		/>
 
-		<link
-			rel="stylesheet"
-			href="css/style.css"
-			type="text/css"
-			media="all"
-		/>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 
-		<link
-			rel="stylesheet"
-			href="css/queries.css"
-			type="text/css"
-			media="all"
-		/>
+		<link rel="stylesheet" href="css/queries.css" type="text/css" media="all" />
 
 		<title>dera-contact-form</title>
 
@@ -41,11 +31,10 @@
 					<h2 class="form-title">Contact Us</h2>
 
 					<!-- Name Group -->
-					<div class="form__group name">
-						<div class="name-group">
+					<div class="form__grid">
+						<div>
 							<label for="first-name" class="form__label"
-								>First Name
-								<span class="star">&ast;</span></label
+								>First Name <span class="star">&ast;</span></label
 							>
 							<input
 								type="text/submit/hidden/button"
@@ -54,13 +43,14 @@
 								class="form__input"
 								required
 							/>
-							<p class="name-error">This field is required</p>
+							<p class="error firstname-error">
+								This field is required
+							</p>
 						</div>
 
-						<div class="name-group">
+						<div>
 							<label for="last-name" class="form__label"
-								>Last Name
-								<span class="star">&ast;</span></label
+								>Last Name <span class="star">&ast;</span></label
 							>
 							<input
 								type="text/submit/hidden/button"
@@ -69,39 +59,39 @@
 								class="form__input"
 								required
 							/>
-							<p class="name-error">This field is required</p>
+							<p class="error lastname-error">
+								This field is required
+							</p>
 						</div>
 					</div>
 
 					<!-- Email Group -->
-					<div class="form__group email">
+					<div>
 						<label for="email" class="form__label"
-							>Email Address
-							<span class="star">&ast;</span></label
+							>Email Address <span class="star">&ast;</span></label
 						>
 						<input
 							type="text/submit/hidden/button"
 							name="email"
 							id="email"
 							class="form__input"
-							value=""
 							required
 						/>
-						<p class="email-error">
+						<p class="error email-error">
 							Please enter a valid email address
 						</p>
 					</div>
 
 					<!-- Query Group -->
-					<div class="form__group query">
+					<div>
 						<label
 							for="general-enquiry"
 							class="form__label query__title"
 						>
 							Query Type <span class="star">&ast;</span>
 						</label>
-						<div class="query__box">
-							<div class="form__input query__group">
+						<div class="form__grid">
+							<div class="query__group">
 								<input
 									type="radio"
 									name="radio"
@@ -109,14 +99,12 @@
 									class="query__input"
 									required
 								/>
-								<label
-									for="general-enquiry"
-									class="query__label"
-									><span class="query__input-btn"></span
-									>General Enquiry</label
+								<label for="general-enquiry" class="query__label"
+									><span class="query__input-btn"></span>General
+									Enquiry</label
 								>
 							</div>
-							<div class="form__input query__group">
+							<div class="query__group">
 								<input
 									type="radio"
 									name="radio"
@@ -124,36 +112,34 @@
 									class="query__input"
 									required
 								/>
-								<label
-									for="support-request"
-									class="query__label"
-									><span class="query__input-btn"></span
-									>Support Request</label
+								<label for="support-request" class="query__label"
+									><span class="query__input-btn"></span>Support
+									Request</label
 								>
 							</div>
 						</div>
-						<p class="query-error">Please select a query type</p>
+						<p class="error query-error">Please select a query type</p>
 					</div>
 
 					<!-- Message Group -->
-					<div class="form__group message">
+					<div>
 						<label for="message" class="form__label"
 							>Message <span class="star">&ast;</span></label
 						>
 						<textarea
 							name="message"
 							id="message"
-							class="form__input"
+							class="message__input"
 							minlength="5"
 							maxlength="250"
 							required
 						></textarea>
 
-						<p class="message-error">This field is required</p>
+						<p class="error message-error">This field is required</p>
 					</div>
 
 					<!-- Consent Group -->
-					<div class="form__group consent">
+					<div>
 						<input
 							type="checkbox"
 							name="consent"
@@ -162,13 +148,12 @@
 							required
 						/>
 						<label for="consent" class="consent__label"
-							><span class="query__input-btn consent__btn"></span
-							>I consent to being contacted by the team
+							><span class="query__input-btn consent__btn"></span>I
+							consent to being contacted by the team
 							<span class="star">&ast;</span></label
 						>
-						<p class="consent-error">
-							To submit this form, please consent to being
-							contacted
+						<p class="error consent-error">
+							To submit this form, please consent to being contacted
 						</p>
 					</div>
 
