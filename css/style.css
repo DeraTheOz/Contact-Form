@@ -83,8 +83,7 @@ body {
 }
 
 .form__input,
-.query__group,
-.message__input {
+.query__group {
 	min-width: 100%;
 	min-height: 5rem;
 	font-size: inherit;
@@ -103,7 +102,13 @@ body {
 	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
 }
 
-.error {
+/* Error classes */
+.firstname-error,
+.lastname-error,
+.email-error,
+.query-error,
+.message-error,
+.consent-error {
 	color: var(--red);
 	height: 1.2rem;
 	margin: 0.3rem 0 1.2rem;
@@ -112,20 +117,10 @@ body {
 	transition: opacity 0.1s ease-in;
 }
 
-.firstname-error,
-.lastname-error,
-.email-error,
-.query-error,
-.message-error,
-.consent-error {
+.error {
 	opacity: 1;
 	visibility: visible;
 }
-
-/* Use for Email Validation: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
-
-/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-*/
 
 /* Query group */
 .query__group {
@@ -187,7 +182,7 @@ body {
 }
 
 /* Message group */
-.message__input {
+.message__group .form__input {
 	min-height: 10.5rem;
 }
 
