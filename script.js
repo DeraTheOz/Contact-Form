@@ -5,8 +5,8 @@ const form = document.querySelector('form');
 const hiddenMessage = document.querySelector('.hidden');
 
 // Input Fields
-const firstName = document.querySelector('input[name="first-name"]');
-const lastName = document.querySelector('input[name="last-name"]');
+const firstName = document.getElementById('first-name');
+const lastName = document.getElementById('last-name');
 const emailInput = document.getElementById('email');
 const queryInput = document.querySelectorAll('.query__input');
 const messageInput = document.getElementById('message');
@@ -21,31 +21,34 @@ const queryError = document.querySelector('.query-error');
 const messageError = document.querySelector('.message-error');
 const consentError = document.querySelector('.consent-error');
 
-// Regex
+// Regular Expression
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 // Functions
 const handleFirstName = () => {
 	if (firstName.value.trim() === '') {
+		firstName.classList.add('form__input-error');
 		firstNameError.classList.add('error');
 	} else if (firstName.value.trim().length < 3) {
+		firstName.classList.add('form__input-error');
 		firstNameError.classList.add('error');
 		firstNameError.textContent = 'Enter at least 3 characters';
 	} else {
+		firstName.classList.remove('form__input-error');
 		firstNameError.classList.remove('error');
 	}
-
-	//	if (firstName.value.trim() === '' || firstName.value.trim().length < 3) {
-	//		firstNameError.classList.add('error');
-	//	} else {
-	//		firstNameError.classList.remove('error');
-	//	}
 };
 
 const handleLastName = () => {
-	if (lastName.value.trim() === '' || lastName.value.trim().length < 3) {
+	if (lastName.value.trim() === '') {
+		lastName.classList.add('form__input-error');
 		lastNameError.classList.add('error');
+	} else if (lastName.value.trim().length < 3) {
+		lastName.classList.add('form__input-error');
+		lastNameError.classList.add('error');
+		lastNameError.textContent = 'Enter at least 3 characters';
 	} else {
+		lastName.classList.remove('form__input-error');
 		lastNameError.classList.remove('error');
 	}
 };
@@ -55,19 +58,24 @@ const handleEmailInput = function () {
 		emailInput.value.trim() === '' ||
 		!emailInput.value.trim().match(emailRegex)
 	) {
+		emailInput.classList.add('form__input-error');
 		emailError.classList.add('error');
 	} else {
+		emailInput.classList.remove('form__input-error');
 		emailError.classList.remove('error');
 	}
 };
 
 const handleMessageInput = function () {
-	if (
-		messageInput.value.trim() === '' ||
-		messageInput.value.trim().length < 3
-	) {
+	if (messageInput.value.trim() === '') {
+		messageInput.classList.add('form__input-error');
 		messageError.classList.add('error');
+	} else if (messageInput.value.trim().length < 10) {
+		messageInput.classList.add('form__input-error');
+		messageError.classList.add('error');
+		messageError.textContent = 'Enter at least 10 characters';
 	} else {
+		messageInput.classList.remove('form__input-error');
 		messageError.classList.remove('error');
 	}
 };
@@ -106,6 +114,8 @@ const resetCustomInputs = function () {
 	radioIsChecked = false;
 	consentIsChecked = false;
 	firstNameError.textContent = 'This field is required';
+	lastNameError.textContent = 'This field is required';
+	messageError.textContent = 'This field is required';
 };
 
 // Event Listeners
@@ -137,6 +147,6 @@ button.addEventListener('click', function (e) {
 
 		setTimeout(function () {
 			hiddenMessage.classList.remove('success');
-		}, 3000);
+		}, 5000);
 	}
 });
