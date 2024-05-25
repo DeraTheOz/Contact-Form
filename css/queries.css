@@ -1,0 +1,26 @@
+/* 570px- 35.62em */
+@media screen and (max-width: 35.62em) {
+	html {
+		font-size: 56.25%;
+	}
+
+	.form__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.message__group .form__input {
+		min-height: 24rem;
+	}
+
+	.consent__label {
+		gap: 2.25rem;
+	}
+
+	.button {
+		margin-top: 2.5rem;
+	}
+
+	.hidden {
+		width: 50%;
+	}
+}
