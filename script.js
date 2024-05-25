@@ -1,7 +1,7 @@
 'use strict';
 
 // Elements
-const form = document.querySelector('.form');
+const form = document.querySelector('form');
 const hiddenMessage = document.querySelector('.hidden');
 
 // Input Fields
@@ -10,7 +10,7 @@ const lastName = document.querySelector('input[name="last-name"]');
 const emailInput = document.getElementById('email');
 const queryInput = document.querySelectorAll('.query__input');
 const messageInput = document.getElementById('message');
-const consentBtn = document.querySelector('consent__btn');
+const consentBtn = document.getElementById('consent');
 const button = document.querySelector('button');
 
 // Error classes
@@ -26,12 +26,20 @@ const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 // Functions
 const handleFirstName = () => {
-	if (firstName.value.trim() === '' || firstName.value.trim().length < 3) {
+	if (firstName.value.trim() === '') {
 		firstNameError.classList.add('error');
+	} else if (firstName.value.trim().length < 3) {
+		firstNameError.classList.add('error');
+		firstNameError.textContent = 'Enter at least 3 characters';
 	} else {
 		firstNameError.classList.remove('error');
-		firstName.value = '';
 	}
+
+	//	if (firstName.value.trim() === '' || firstName.value.trim().length < 3) {
+	//		firstNameError.classList.add('error');
+	//	} else {
+	//		firstNameError.classList.remove('error');
+	//	}
 };
 
 const handleLastName = () => {
@@ -39,7 +47,6 @@ const handleLastName = () => {
 		lastNameError.classList.add('error');
 	} else {
 		lastNameError.classList.remove('error');
-		lastName.value = '';
 	}
 };
 
@@ -51,7 +58,6 @@ const handleEmailInput = function () {
 		emailError.classList.add('error');
 	} else {
 		emailError.classList.remove('error');
-		emailInput.value = '';
 	}
 };
 
@@ -63,8 +69,43 @@ const handleMessageInput = function () {
 		messageError.classList.add('error');
 	} else {
 		messageError.classList.remove('error');
-		messageInput.value = '';
 	}
+};
+
+let radioIsChecked;
+const handleQuerySelection = function (query) {
+	query.forEach(function (radio) {
+		if (radio.checked) {
+			radioIsChecked = radio.checked;
+			return;
+		}
+	});
+
+	if (radioIsChecked) {
+		queryError.classList.remove('error');
+	} else {
+		queryError.classList.add('error');
+	}
+};
+
+let consentIsChecked;
+const handleConsentSelection = function (query) {
+	if (query.checked) {
+		consentIsChecked = query.checked;
+	}
+
+	if (consentIsChecked) {
+		consentError.classList.remove('error');
+	} else {
+		consentError.classList.add('error');
+	}
+};
+
+// Reset custom inputs and error message state
+const resetCustomInputs = function () {
+	radioIsChecked = false;
+	consentIsChecked = false;
+	firstNameError.textContent = 'This field is required';
 };
 
 // Event Listeners
@@ -76,14 +117,22 @@ button.addEventListener('click', function (e) {
 	handleLastName();
 	handleMessageInput();
 
-	const allValid = ![
+	handleQuerySelection(queryInput);
+	handleConsentSelection(consentBtn);
+
+	// check if all inputs are valid
+	const allInputsValid = [
 		firstNameError,
 		lastNameError,
 		emailError,
-		messageError
+		queryError,
+		messageError,
+		consentError
 	].some(error => error.classList.contains('error'));
 
-	if (allValid) {
+	if (!allInputsValid) {
+		form.reset();
+		resetCustomInputs();
 		hiddenMessage.classList.add('success');
 
 		setTimeout(function () {
