@@ -38,25 +38,23 @@ body {
 	color: var(--dark-grey);
 	line-height: var(--line-height);
 	min-height: var(--min-height);
-	padding: 12rem 2.4rem;
+	padding: 0 1.8rem;
 	background-color: var(--light-green);
-	position: relative;
 }
 
 /* Form */
 .contact {
 	max-width: 73.6rem;
+	padding: 3.5rem 2.8rem;
 	background-color: var(--white);
-	padding: 3.5rem;
-	margin: auto;
 	border-radius: 1.6rem;
-	/* transform: translateY(8%); */
+	margin: 12rem auto;
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
-	gap: 2.5rem;
+	gap: 1.5rem;
 }
 
 .form-title {
@@ -103,18 +101,24 @@ body {
 }
 
 /* Error classes */
+.form__input-error {
+	border: 1px solid var(--red);
+	transition: border 0.1s ease-in;
+}
+
 .firstname-error,
 .lastname-error,
 .email-error,
 .query-error,
 .message-error,
 .consent-error {
+	font-size: inherit;
 	color: var(--red);
 	height: 1.2rem;
 	margin: 0.3rem 0 1.2rem;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.1s ease-in;
+	transition: all 0.1s ease-in;
 }
 
 .error {
@@ -152,7 +156,7 @@ body {
 .query__input-btn {
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 1px solid var(--green);
+	border: 1px solid var(--medium-grey);
 	border-radius: 50%;
 	position: relative;
 }
@@ -168,11 +172,15 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	opacity: 0;
-	transition: opacity 0.1s ease-in;
+	transition: all 0.1s ease-in;
 }
 
 .query__input:checked + .query__label .query__input-btn::after {
 	opacity: 1;
+}
+
+.query__input:checked + .query__label .query__input-btn {
+	border: 1px solid var(--green);
 }
 
 /* active state for radio input container */
@@ -192,7 +200,7 @@ body {
 }
 
 .consent__label {
-	width: 100%;
+	max-width: 100%;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
@@ -249,20 +257,21 @@ body {
 .hidden {
 	max-width: 45rem;
 	min-width: 32.7rem;
-	width: 80%;
+	width: 100%;
 	color: var(--white);
 	background-color: var(--dark-grey);
 	border-radius: 1.2rem;
 	padding: 2rem;
 	margin: 0 auto;
-	position: absolute;
-	top: 2%;
+	position: fixed;
+	top: 2.5%;
 	left: 50%;
 	transform: translate(-50%, 0);
-	/* transform: translateY(-50%); */
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s ease-in;
+	z-index: 999;
 }
 
 .success-title-box {
